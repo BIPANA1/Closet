@@ -23,8 +23,21 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $closets = Closet::all();
-        return view('home', compact('closets'));
+        if (auth()->user()->role == 1) {
+           
+            return view('admin.dashboard');
+        } else {
+            return view('user.home');
+        };
+    }
+    public function home(){
+        if (auth()->user()->role == 1){
+            return view('admin.dashboard');
+        }else{
+            $closets = Closet::all();
+            return view('user.home', compact('closets'));
+        }
+       
     }
    
 }

@@ -8,21 +8,33 @@ use Illuminate\Http\Request;
 class ClosetController extends Controller
 {
   public function addProduct()
-  {
-    $closets = Closet::all();
-    return view('addProduct', compact('closets'));
+  { 
+    $closets = Closet::paginate(3);
+    return view('admin.addProduct', compact('closets'));
   }
 
   public function welcome()
   {
     $closets = Closet::all();
-    return view('welcome', compact('closets'));
+    return view('user.home', compact('closets'));
+  }
+
+  public function exploreCloset()
+  {
+    $closets = Closet::all();
+    return view('user.explore', compact('closets'));
   }
 
   public function addItem()
   {
 
-    return view('addItem');
+    return view('admin.addItem');
+  }
+
+  public function addedItem()
+  {
+    $closets = Closet::all();
+    return view('admin.explore',compact('closets'));
   }
 
   public function createCloset(Request $request)
@@ -71,7 +83,7 @@ class ClosetController extends Controller
   public function edit($id)
   {
     $closet = Closet::find($id);
-    return view('edit', compact('closet'));
+    return view('admin.edit', compact('closet'));
   }
 
   
@@ -102,6 +114,16 @@ try{
 
 public function description($id){
   $closet = Closet::find($id);
-  return view('description',compact('closet'));
+  return view('user.description',compact('closet'));
 }
+
+public function search(Request $request)
+    {
+        
+        $closets = Closet::where('name', 'like', '%'.$request->search.'%')->get();   
+        return view('user.explore', compact('closets'));
+    }
+
+
+
 }

@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Closet extends Model
 {
     use HasFactory;
-    protected $fillable=['name','brand','description','price'];
+    protected $fillable=['name','brand','description','price','image'];
 }

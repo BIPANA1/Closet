@@ -60,7 +60,7 @@ ul {
 }
 
 .nav-item{
-    margin-right: 5px;
+    /* margin-right: 5px; */
     
 }
 nav{
@@ -121,11 +121,11 @@ table, th, td {
 }
 
 table {
-    width: 70%;
+    width: 90%;
     height: 70%;
     border-collapse: collapse;
     margin-top: 20px;
-    margin-left: 18%;
+    margin-left: 5%;
    
 }
 
@@ -452,4 +452,37 @@ input[type="submit"] {
 } */
 .side-items{
     display: inline;
+}
+
+/* search */
+
+.form-input {
+	display: flex;
+	align-items: center;
+	height: 36px;
+}
+.form-input input {
+	flex-grow: 1;
+	padding: 0 16px;
+	height: 100%;
+	border: none;
+	/* background-color: black; */
+	border-radius: 36px 0 0 36px;
+	outline: none;
+	width: 100%;
+	color: black;
+}
+.form-input button {
+	width: 36px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--blue);
+	color: var(--light);
+	font-size: 18px;
+	border: none;
+	outline: none;
+	border-radius: 0 36px 36px 0;
+	cursor: pointer;
 }
