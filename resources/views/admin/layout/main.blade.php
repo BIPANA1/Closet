@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
@@ -40,7 +40,7 @@
 			</a>
 		</nav>
 		<!-- NAVBAR -->
-    
+
 <!-- SIDEBAR -->
 <section id="sidebar">
     <a href="#" class="brand">
@@ -93,15 +93,8 @@
         </li>
     </ul>
     <ul class="side-menu">
-        <li>
-            <a href="#">
-                <i class='bx bxs-cog' ></i>
-                <span class="text">Settings</span>
-            </a>
-        </li>
-    
         @if(auth()->user())
-                <li class="nav-item"> 
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                     <i class='bx bxs-log-out-circle'></i>    {{ __('Logout') }}
@@ -116,10 +109,10 @@
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                </li> 
+                </li>
                 <li class="nav-item">
                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                </li>                
+                </li>
                 @endif
     </ul>
 </section>
@@ -149,7 +142,7 @@ allSideMenu.forEach(item=> {
 document.addEventListener('DOMContentLoaded', function () {
 	const menuBar = document.querySelector('#content nav .bx.bx-menu');
 	const sidebar = document.getElementById('sidebar');
-  
+
 	menuBar.addEventListener('click', function () {
 	  sidebar.classList.toggle('hide');
 	});

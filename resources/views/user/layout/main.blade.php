@@ -13,7 +13,7 @@
 
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-  
+
     <!-- CSS file -->
     <link rel="stylesheet" href="/css/style.css">
 
@@ -48,7 +48,7 @@
                         </form>
                         </li>
 
-                        
+
 
 
                         @if(auth()->user())
